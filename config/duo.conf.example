@@ -1,0 +1,13 @@
+[duo]
+; Duo Web SDK application credentials
+; Create a new Web SDK application in your Duo Admin Panel
+client_id = YOUR_CLIENT_ID_HERE
+client_secret = YOUR_CLIENT_SECRET_HERE
+api_hostname = api-XXXXXXXX.duosecurity.com
+
+; URL that the Duo service will redirect back to after authentication
+; For local testing, you can use localhost
+redirect_uri = https://localhost:8080/duo-callback
+
+; Optional: Set to true to fail open (allow access) if Duo is unavailable
+failmode = closed

@@ -1,0 +1,19 @@
+services:
+  duo_universal_python_container_demo:
+    build: .
+    container_name: duo_universal_python_container_demo
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config:/app/config:ro
+    environment:
+      - FLASK_ENV=${FLASK_ENV:-development}
+      - DUO_CONFIG_PATH=/app/config/duo.conf
+      #- FLASK_DEBUG=1  # Enable debug mode
+    restart: unless-stopped
+    networks:
+      - duo-network
+
+networks:
+  duo-network:
+    driver: bridge
